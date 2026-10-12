@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "boleto-parser",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-01-28",
+  "compatibility_flags": ["nodejs_compat"],
+  // Bearer token for the /mcp endpoint lives in the MCP_AUTH_TOKEN secret:
+  //   production: npx wrangler secret put MCP_AUTH_TOKEN
+  //   local dev:  add MCP_AUTH_TOKEN=<token> to .dev.vars (gitignored)
+  "vars": {},
+  "observability": {
+    "enabled": true
+  }
+}

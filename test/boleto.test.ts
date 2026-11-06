@@ -136,6 +136,7 @@ describe("invalid input", () => {
   it("rejects wrong lengths", () => {
     expect(() => parseBoleto("12345")).toThrow(/Invalid length: got 5 digits/);
     expect(() => parseBoleto("1".repeat(46))).toThrow(/Invalid length: got 46 digits/);
+    expect(() => parseBoleto("1234567890")).toThrow(/Invalid length: got 10 digits/);
   });
 
   it("strips non-digit formatting characters before parsing", () => {

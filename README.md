@@ -48,6 +48,12 @@ Collection/utility bills (`kind: "collection"`, barcodes starting with `8`):
 the new cycle (`expirationDate`), and the old-cycle date is reported in
 `expirationDateLegacy` for reference.
 
+### `health`
+
+Takes no arguments; returns `{ "status": "ok" }`. Use it — or the
+unauthenticated `GET /` metadata endpoint — to verify availability instead of
+calling `parse_boleto` with a test value.
+
 ## Authentication
 
 Requests to `/mcp` require an `Authorization: Bearer <token>` header matching

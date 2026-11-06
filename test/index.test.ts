@@ -39,7 +39,8 @@ describe("health tool", () => {
     expect(res.status).toBe(200);
     const msg = await lastMessage(res);
     expect(msg.result.isError).toBeUndefined();
-    expect(JSON.stringify(msg.result)).toContain('"status":"ok"');
+    expect(msg.result.content[0].text).toBe('{"status":"ok"}');
+    expect(msg.result.structuredContent).toEqual({ status: "ok" });
   });
 
   it("parse_boleto tools/list description includes a valid example", async () => {
